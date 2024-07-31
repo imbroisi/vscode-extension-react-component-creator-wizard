@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { createComponent } from './Component';
 import { configOptions, ASK_ON_COMPONENT_CREATION } from './configOptions';
+import { validateComponentName } from './utils';
 
 export interface OptionsSelected {
   [key: string]: string
@@ -9,18 +10,19 @@ export interface OptionsSelected {
 async function commun(
   context: vscode.ExtensionContext,
   uri: vscode.Uri,
-  // optionsSelected: OptionsSelected,
-  type: string
+  type: string,
 ) {
-  // Retrieve the previously selected option
-  const previousSelections = context.globalState.get<Record<string, OptionsSelected>>('optionsSelected');
+  let previousSelections: any = context.globalState.get<Record<string, OptionsSelected>>('optionsSelected');
 
-  console.log('POS 1.1 previousSelections ->', previousSelections);
-
+  if (!previousSelections) {
+    previousSelections = {};
+    configOptions.forEach((configOption) => {
+      previousSelections[configOption.id] =  configOption.options[0]
+    });
+  }
 
   const optionsSelected: any = { ...previousSelections };
-  console.log('POS 1.2 optionsSelected ->', optionsSelected);
-
+  
   let componentName: string | undefined = '';
   if (type === 'create') {
     componentName = await vscode.window.showInputBox({
@@ -31,15 +33,20 @@ async function commun(
       vscode.window.showInformationMessage('No file name entered');
       return;
     }
+
+    if (!validateComponentName(componentName)) {
+      vscode.window.showErrorMessage('Invalid Component name');
+      return;
+    }
   }
 
   for (let configOption of configOptions) {
-    const { id, question, options, ask_on_component_creation } = configOption;
+    const { id, question, options, ask_on_component_creation_default } = configOption;
     const previousSelection: any = previousSelections?.[id];
 
     const displayOption = [...options];
     if (type === 'setup') {
-      if (ask_on_component_creation) {
+      if (ask_on_component_creation_default) {
         displayOption.push(ASK_ON_COMPONENT_CREATION);
       }
     }
@@ -48,7 +55,7 @@ async function commun(
       const index = displayOption.indexOf(previousSelection);
       if (index > -1) {
         displayOption.splice(index, 1);
-        if (type === 'setup' || ask_on_component_creation) {
+        if (type === 'setup' || ask_on_component_creation_default) {
           displayOption.unshift(previousSelection);
         }
       }
@@ -69,42 +76,34 @@ async function commun(
     }
 
     optionsSelected[id] = selectedOption;
-    if (type === 'setup') {
-
-    }
 
     vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
   }
 
-  // console.log('POS 2 optionsSelected ->', optionsSelected)
-  // Save the selected option for future sessions
-  try {
-    context.globalState.update('optionsSelected', optionsSelected);
-  } catch (error) {
-    console.error('Error saving the selected options', error);
+  if (type === 'setup') {
+    try {
+      context.globalState.update('optionsSelected', optionsSelected);
+    } catch (error) {
+      console.error('Error saving the selected options', error);
+    }
   }
-  // context.globalState.update('optionsSelected', optionsSelected);
 
   if (type === 'create') {
     createComponent(uri, componentName, optionsSelected);
   }
 }
 
-export function activate(context: vscode.ExtensionContext) {
-
-  const optionsSelected: OptionsSelected = {};
-
-  let create = vscode.commands.registerCommand('extension.createReactComponent', async (uri: vscode.Uri) => {
+export function activate(context: vscode.ExtensionContext) {  
+  const create = vscode.commands.registerCommand('extension.createReactComponent', (uri: vscode.Uri) => {
     commun(context, uri, 'create');
   });
 
-  let setup = vscode.commands.registerCommand('extension.createReactComponentSetup', async (uri: vscode.Uri) => {
+  const setup = vscode.commands.registerCommand('extension.createReactComponentSetup', (uri: vscode.Uri) => {
     commun(context, uri, 'setup');
   });
 
   context.subscriptions.push(create);
   context.subscriptions.push(setup);
-
 }
 
 export function deactivate() { }

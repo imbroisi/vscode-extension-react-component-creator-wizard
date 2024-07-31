@@ -17,7 +17,7 @@ export const configOptions = [
             'Tailwind',
             'CSS'
         ],
-        ask_on_component_creation: true,
+        ask_on_component_creation_default: 'yes',
     },
     {
         id: 'testing',
@@ -32,10 +32,10 @@ export const configOptions = [
         id: 'storybook',
         question: 'Create storybook file?',
         options: [
-            'Yes',
             'No',
+            'Yes',
         ],
-        ask_on_component_creation: true,
+        ask_on_component_creation_default: 'yes',
     },
     {
         id: 'semicolon',
@@ -46,5 +46,4 @@ export const configOptions = [
         ],
     },
 
-]
-
+];

@@ -31,4 +31,4 @@ export const createTestsFile = (uri: vscode.Uri, componentName: string, optionsS
   `;
 
   writeContentToFile(filePath, fileContent);
-}
+};

@@ -40,4 +40,4 @@ export const createStylesFile = (uri: vscode.Uri, componentName: string, options
   }
 
   writeContentToFile(filePath, fileContent);
-}
+};

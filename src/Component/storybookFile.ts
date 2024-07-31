@@ -12,6 +12,7 @@ export const createStorybookFile = (uri: vscode.Uri, componentName: string, opti
 
   const filePath = `${uri.fsPath}/${componentName}/${componentName}.stories.${fileExtension}`;
   const fileContent = `
+    /* istanbul ignore file */
     import { StoryObj } from '@storybook/react'${semicolon}
     import ${componentName}, { ${componentName}Props } from './${componentName}'${semicolon}
 
@@ -65,4 +66,4 @@ export const createStorybookFile = (uri: vscode.Uri, componentName: string, opti
   `;
 
   writeContentToFile(filePath, fileContent);
-}
+};

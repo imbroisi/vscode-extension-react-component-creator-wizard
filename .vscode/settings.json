@@ -10,5 +10,6 @@
 	"typescript.tsc.autoDetect": "off",
 	"terminal.integrated.fontSize": 13,
 	"terminal.integrated.fontFamily": "monospace",
-	"terminal.integrated.lineHeight": 1.2
+	"terminal.integrated.lineHeight": 1.2,
+	"editor.fontSize": 14
 }
