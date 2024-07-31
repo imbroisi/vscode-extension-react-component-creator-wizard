@@ -9,11 +9,17 @@ export interface OptionsSelected {
 async function commun(
   context: vscode.ExtensionContext,
   uri: vscode.Uri,
-  optionsSelected: OptionsSelected,
+  // optionsSelected: OptionsSelected,
   type: string
 ) {
   // Retrieve the previously selected option
   const previousSelections = context.globalState.get<Record<string, OptionsSelected>>('optionsSelected');
+
+  console.log('POS 1.1 previousSelections ->', previousSelections);
+
+
+  const optionsSelected: any = { ...previousSelections };
+  console.log('POS 1.2 optionsSelected ->', optionsSelected);
 
   let componentName: string | undefined = '';
   if (type === 'create') {
@@ -77,7 +83,7 @@ async function commun(
   } catch (error) {
     console.error('Error saving the selected options', error);
   }
-  context.globalState.update('optionsSelected', optionsSelected);
+  // context.globalState.update('optionsSelected', optionsSelected);
 
   if (type === 'create') {
     createComponent(uri, componentName, optionsSelected);
@@ -89,11 +95,11 @@ export function activate(context: vscode.ExtensionContext) {
   const optionsSelected: OptionsSelected = {};
 
   let create = vscode.commands.registerCommand('extension.createReactComponent', async (uri: vscode.Uri) => {
-    commun(context, uri, optionsSelected, 'create');
+    commun(context, uri, 'create');
   });
 
   let setup = vscode.commands.registerCommand('extension.createReactComponentSetup', async (uri: vscode.Uri) => {
-    commun(context, uri, optionsSelected, 'setup');
+    commun(context, uri, 'setup');
   });
 
   context.subscriptions.push(create);

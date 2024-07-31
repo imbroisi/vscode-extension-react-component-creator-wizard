@@ -2,7 +2,11 @@ import * as vscode from 'vscode';
 import { trimString, writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
 
-export const createComponentFile = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+export const createComponentFile = (
+  uri: vscode.Uri, 
+  componentName: string, 
+  optionsSelected: OptionsSelected
+) => {
   const semicolon = optionsSelected.semicolon === 'No' ? '' : ';';
   const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';
   const filePath = `${uri.fsPath}/${componentName}/${componentName}.${fileExtension}`;
@@ -47,6 +51,9 @@ export const createComponentFile = (uri: vscode.Uri, componentName: string, opti
           `;
           break;
     }
+
+    // console.log('POS 1 optionsSelected', optionsSelected)
+    // console.log('POS 2 fileContent', fileContent)
   
     writeContentToFile(filePath, fileContent);
   }

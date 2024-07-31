@@ -15,11 +15,17 @@ const createIndexFile = (uri: vscode.Uri, componentName: string, optionsSelected
     export { default } from \'./${componentName}\'${semicolon}
   `;
 
+  console.log('POS 1.4 fileContent ->', fileContent);
+
   writeContentToFile(filePath, fileContent);
 }
 
 export const createComponent = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+  console.log('POS 1.3 optionsSelected ->', optionsSelected);
+
   createIndexFile(uri, componentName, optionsSelected);
+  console.log('POS 1.5 optionsSelected ->', optionsSelected);
+
   createComponentFile(uri, componentName, optionsSelected);
   createStylesFile(uri, componentName, optionsSelected);
   createTestsFile(uri, componentName, optionsSelected);

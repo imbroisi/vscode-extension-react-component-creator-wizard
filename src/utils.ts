@@ -6,6 +6,9 @@ export const  trimString = (multiLineString: string) => {
       lines.shift();
     }
 
+    console.log('multiLineString ->', multiLineString);
+    console.log('lines ->', JSON.stringify(lines, null, 2));
+
     const extraSpaces = lines[0].length - lines[0].trimStart().length;
     return lines.map(line => line.slice(extraSpaces)).join('\n');
 }
