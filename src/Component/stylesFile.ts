@@ -1,15 +1,18 @@
 import * as vscode from 'vscode';
 import { writeContentToFile } from '../utils';
+import { OptionsSelected } from '../extension';
 
-export const createStylesFile = (uri: vscode.Uri, componentName: string, componentStyle: string) => {
-    let filePath = '';
-    let fileContent = '';
-  
-    switch (componentStyle) {
-      case 'Styled Components':
-        filePath = `${uri.fsPath}/${componentName}/${componentName}.styles.ts`;
-        fileContent = `
-          import styled from 'styled-components';
+export const createStylesFile = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+  const semicolon = optionsSelected.semicolon === 'No' ? '' : ';';
+  let filePath = '';
+  let fileContent = '';
+
+  switch (optionsSelected.style) {
+    case 'Styled Components':
+      const fileExtension = optionsSelected.language === 'TypeScript' ? 'ts' : 'js';
+      filePath = `${uri.fsPath}/${componentName}/${componentName}.styles.${fileExtension}`;
+      fileContent = `
+          import styled from 'styled-components'${semicolon}
   
           export const Container = styled.div\`
             display: flex;
@@ -17,14 +20,14 @@ export const createStylesFile = (uri: vscode.Uri, componentName: string, compone
             align-items: center;
             height: 100vh;
             width: 100%;
-          \`;
+          \`${semicolon}
         `;
-        break;
-      case 'TailwindCSS':
-        return;
-      case 'CSS':
-        filePath = `${uri.fsPath}/${componentName}/${componentName}.css`;
-        fileContent = `
+      break;
+    case 'Tailwind':
+      return;
+    case 'CSS':
+      filePath = `${uri.fsPath}/${componentName}/${componentName}.css`;
+      fileContent = `
           .main {
             display: flex;
             justify-content: center;
@@ -33,8 +36,8 @@ export const createStylesFile = (uri: vscode.Uri, componentName: string, compone
             width: 100%;
           }
         `;
-        break;
-    }
-  
-    writeContentToFile(filePath, fileContent);
+      break;
   }
+
+  writeContentToFile(filePath, fileContent);
+}

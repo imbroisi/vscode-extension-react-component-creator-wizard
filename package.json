@@ -13,16 +13,25 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.createReactElement",
-        "title": "Create React Element"
+        "command": "extension.createReactComponent",
+        "title": "Create Component Structure"
+      },
+      {
+        "command": "extension.createReactComponentSetup",
+        "title": "Setup Component Structure..."
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.createReactElement",
+          "command": "extension.createReactComponent",
           "when": "explorerResourceIsFolder",
-          "group": "newGrouop"
+          "group": "createReactComponentGroup"
+        },
+        {
+          "command": "extension.createReactComponentSetup",
+          "when": "explorerResourceIsFolder",
+          "group": "createReactComponentGroup"
         }
       ]
     }
