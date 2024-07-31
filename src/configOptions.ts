@@ -20,14 +20,6 @@ export const configOptions = [
         ask_on_component_creation: true,
     },
     {
-        id: 'semicolon',
-        question: 'Use semicolon at the end of the statements?',
-        options: [
-            'Yes',
-            'No'
-        ],
-    },
-    {
         id: 'testing',
         question: 'Create unit test file?',
         options: [
@@ -36,5 +28,23 @@ export const configOptions = [
             'No'
         ],
     },
+    {
+        id: 'storybook',
+        question: 'Create storybook file?',
+        options: [
+            'Yes',
+            'No',
+        ],
+        ask_on_component_creation: true,
+    },
+    {
+        id: 'semicolon',
+        question: 'Use semicolon at the end of the statements?',
+        options: [
+            'Yes',
+            'No'
+        ],
+    },
 
 ]
+

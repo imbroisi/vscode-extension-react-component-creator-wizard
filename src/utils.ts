@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-const  trimString = (multiLineString: string) => {
+export const  trimString = (multiLineString: string) => {
     const lines = multiLineString.split('\n');
     if (lines[0] === '') {
       lines.shift();

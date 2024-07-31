@@ -63,7 +63,6 @@ async function commun(
     }
 
     optionsSelected[id] = selectedOption;
-    console.log('-->>>> selectedOption', selectedOption)
     if (type === 'setup') {
 
     }
@@ -71,7 +70,7 @@ async function commun(
     vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
   }
 
-  console.log('POS 2 optionsSelected ->', optionsSelected)
+  // console.log('POS 2 optionsSelected ->', optionsSelected)
   // Save the selected option for future sessions
   try {
     context.globalState.update('optionsSelected', optionsSelected);
@@ -83,14 +82,11 @@ async function commun(
   if (type === 'create') {
     createComponent(uri, componentName, optionsSelected);
   }
-
 }
 
 export function activate(context: vscode.ExtensionContext) {
 
   const optionsSelected: OptionsSelected = {};
-
-  // console.log('\npreviousSelection ->', previousSelection)
 
   let create = vscode.commands.registerCommand('extension.createReactComponent', async (uri: vscode.Uri) => {
     commun(context, uri, optionsSelected, 'create');

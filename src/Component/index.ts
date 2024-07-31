@@ -4,6 +4,7 @@ import { createStylesFile } from './stylesFile';
 import { createComponentFile } from './componentFile';
 import { createTestsFile } from './testsFile';
 import { OptionsSelected } from '../extension';
+import { createStorybookFile } from './storybookFile';
 
 const createIndexFile = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
   const semicolon = optionsSelected.semicolon === 'No' ? '' : ';';
@@ -22,4 +23,5 @@ export const createComponent = (uri: vscode.Uri, componentName: string, optionsS
   createComponentFile(uri, componentName, optionsSelected);
   createStylesFile(uri, componentName, optionsSelected);
   createTestsFile(uri, componentName, optionsSelected);
+  createStorybookFile(uri, componentName, optionsSelected);
 }

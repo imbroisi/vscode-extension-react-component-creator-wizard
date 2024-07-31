@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { writeContentToFile } from '../utils';
+import { trimString, writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
 
 export const createComponentFile = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
@@ -7,13 +7,13 @@ export const createComponentFile = (uri: vscode.Uri, componentName: string, opti
   const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';
   const filePath = `${uri.fsPath}/${componentName}/${componentName}.${fileExtension}`;
     let fileContent = '';
-  
+      
     switch (optionsSelected.style) {
       case 'Styled Components':
         fileContent = `
           import { Container } from \'./${componentName}.styles\'${semicolon}
-  
-          export default function ${componentName} () {
+          
+          export default function ${componentName}() {
             return (
               <Container>
                 <h1>${componentName}!</h1>
@@ -24,7 +24,7 @@ export const createComponentFile = (uri: vscode.Uri, componentName: string, opti
         break;
       case 'Tailwind':
         fileContent = `
-          export default function ${componentName} () {
+          export default function ${componentName}() {
             return (
               <div className="min-h-screen flex items-center justify-center">
                 <h1>${componentName}!</h1>
@@ -37,7 +37,7 @@ export const createComponentFile = (uri: vscode.Uri, componentName: string, opti
           fileContent = `
             import './${componentName}.css'${semicolon}
   
-            export default function ${componentName} () {
+            export default function ${componentName}() {
               return (
                 <div className="main">
                   <h1>${componentName}!</h1>
