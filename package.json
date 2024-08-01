@@ -1,10 +1,14 @@
 {
-  "name": "create-component",
-  "displayName": "react-create-component",
-  "description": "Create a dir/files structure for React component",
-  "version": "1.0.1",
+  "name": "vscode-extension-react-component-structure",
+  "displayName": "vscode-extension-react-component-structure",
+  "description": "Create folder and files structure for React component",
+  "version": "0.0.1-beta",
   "engines": {
     "vscode": "^1.91.0"
+  },
+  "author": {
+    "name": "Luiz Imbroisi - Ender",
+    "email": "ender.imbroisi@gmail.com"
   },
   "categories": [
     "Other"
