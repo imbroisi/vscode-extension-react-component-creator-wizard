@@ -17,7 +17,7 @@ async function commun(
   if (!previousSelections) {
     previousSelections = {};
     configOptions.forEach((configOption) => {
-      previousSelections[configOption.id] =  configOption.options[0]
+      previousSelections[configOption.id] =  configOption.options[0];
     });
   }
 
