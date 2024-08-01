@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import interfaceModel from './models/interface';
+import modelInterface from './models/model.interface';
 
 export const trimString = (multiLineString: string) => {
   const lines = multiLineString.split('\n');
@@ -32,10 +32,11 @@ export const replaceTags = (
   testParentPath?: string,
 ) => {
   const interfaceTs = isTypescript 
-    ? interfaceModel
+    ? modelInterface
       .replace(/{{NAME}}/g, name)
       .replace(/{{SEMICOLON}}/g, withSemicolon ? ';' : '')
     : '';
+    
   const props = isTypescript ? `props: ${name}Props` : '';
 
   return component

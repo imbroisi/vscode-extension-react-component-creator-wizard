@@ -1,9 +1,9 @@
 import * as vscode from 'vscode';
 import { replaceTags, writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
-import componentStyledComponent from '../models/component.styledComponents';
-import componentTailwind from '../models/component.tailwind';
-import componentCss from '../models/component.css';
+import componentStyledComponent from '../models/model.component.styledComponents';
+import modelComponentTailwind from '../models/model.component.tailwind';
+import modelComponentCss from '../models/model.component.css';
 
 export const createComponentFile = async (
   uri: vscode.Uri,
@@ -12,8 +12,8 @@ export const createComponentFile = async (
 ) => {
   const componentChoosen = {
     'Styled Components': componentStyledComponent,
-    Tailwind: componentTailwind,
-    CSS: componentCss,
+    Tailwind: modelComponentTailwind,
+    CSS: modelComponentCss,
   }[optionsSelected.style] || componentStyledComponent;
 
   const withSemicolon = optionsSelected.withSemicolon !== 'No';

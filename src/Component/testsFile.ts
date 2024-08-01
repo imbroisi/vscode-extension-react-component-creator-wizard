@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { replaceTags, writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
-import testModel from '../models/test';
+import modelTest from '../models/model.test';
 
 
 export const createTestsFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
@@ -15,7 +15,7 @@ export const createTestsFile = async (uri: vscode.Uri, componentName: string, op
   const testParentPath = optionsSelected.testing.indexOf('inside') === -1 ? '.' : '..';
   
   const fileContent = replaceTags(
-    testModel, 
+    modelTest, 
     componentName, 
     withSemicolon, 
     isTypescript,

@@ -6,18 +6,6 @@ import { createTestsFile } from './testsFile';
 import { createStorybookFile } from './storybookFile';
 import { OptionsSelected } from '../extension';
 
-// const createIndexFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
-//   const withSemicolon = optionsSelected.withSemicolon !== 'No';
-//   const isTypescript = optionsSelected.language === 'TypeScript';
-
-//   const fileContent = replaceTags(indexFile, componentName, withSemicolon, isTypescript);
-
-//   const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';
-//   const filePath = `${uri.fsPath}/${componentName}/index.${fileExtension}`;
-
-//   await writeContentToFile(filePath, fileContent);
-// };
-
 export const createComponent = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
   await createIndexFile(uri, componentName, optionsSelected);
   const componentFilePath = await createComponentFile(uri, componentName, optionsSelected);
