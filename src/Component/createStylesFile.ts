@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 import { replaceTags, writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
-import modelStyleCss from '../models/model.style.css';
-import modelStyleStyledComponent from '../models/model.style.styledComponents';
+import modelStyleCss from '../models/model.style_css';
+import modelStyleStyledComponent from '../models/model.style_styledComponents';
 
 export const createStylesFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
   const withSemicolon = optionsSelected.withSemicolon !== 'No';

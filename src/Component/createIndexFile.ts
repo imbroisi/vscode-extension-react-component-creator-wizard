@@ -1,7 +1,7 @@
 
 import * as vscode from 'vscode';
 import { replaceTags, writeContentToFile } from '../utils';
-import modelIndexFile from '../models/model.indexFile';
+import modelIndexFile from '../models/model.index';
 import { OptionsSelected } from '../extension';
 
 export const createIndexFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {

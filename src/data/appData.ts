@@ -1,6 +1,6 @@
 export const ASK_ON_COMPONENT_CREATION = 'Ask on component creation';
 
-export const configOptions = [
+export const appData = [
     {
         id: 'language',
         question: 'Choose a language',

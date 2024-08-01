@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { createComponent } from './Component';
-import { configOptions, ASK_ON_COMPONENT_CREATION } from './configOptions';
+import { appData, ASK_ON_COMPONENT_CREATION } from './data/appData';
 import { validateComponentName } from './utils';
 
 export interface OptionsSelected {
@@ -16,8 +16,8 @@ async function commun(
 
   if (!previousSelections) {
     previousSelections = {};
-    configOptions.forEach((configOption) => {
-      previousSelections[configOption.id] =  configOption.options[0];
+    appData.forEach((data) => {
+      previousSelections[data.id] = data.options[0];
     });
   }
 
@@ -47,8 +47,8 @@ async function commun(
     }
   }
 
-  for (let configOption of configOptions) {
-    const { id, question, options, ask_on_component_creation_default } = configOption;
+  for (let data of appData) {
+    const { id, question, options, ask_on_component_creation_default } = data;
     const previousSelection: any = previousSelections?.[id];
 
     const displayOption = [...options];
