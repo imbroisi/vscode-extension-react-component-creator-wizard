@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { createComponent } from './Component';
+import createAllFiles from './Components';
 import { appData, ASK_ON_COMPONENT_CREATION } from './data/appData';
 import { validateComponentName } from './utils';
 
@@ -94,7 +94,7 @@ async function commun(
   }
 
   if (type === 'create') {
-    createComponent(uri, componentName, optionsSelected);
+    createAllFiles(uri, componentName, optionsSelected);
   }
 }
 

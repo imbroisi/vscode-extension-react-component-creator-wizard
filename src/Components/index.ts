@@ -6,7 +6,7 @@ import { createTestsFile } from './createTestsFile';
 import { createStorybookFile } from './createStorybookFile';
 import { OptionsSelected } from '../extension';
 
-export const createComponent = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+const createAllFiles = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
   await createIndexFile(uri, componentName, optionsSelected);
   const componentFilePath = await createComponentFile(uri, componentName, optionsSelected);
   await createStylesFile(uri, componentName, optionsSelected);
@@ -25,3 +25,5 @@ export const createComponent = async (uri: vscode.Uri, componentName: string, op
     vscode.window.showErrorMessage(`Failed to open and reveal ${componentFileUri.fsPath}: ${(error as Error).message}`);
   }
 };
+
+export default createAllFiles;
