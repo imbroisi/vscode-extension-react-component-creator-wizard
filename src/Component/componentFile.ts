@@ -3,7 +3,7 @@ import { replaceTags, writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
 import componentStyledComponent from '../models/component.styledComponents';
 import componentTailwind from '../models/component.tailwind';
-import componentCss from '../models/componenent.css';
+import componentCss from '../models/component.css';
 
 export const createComponentFile = async (
   uri: vscode.Uri,
@@ -24,7 +24,6 @@ export const createComponentFile = async (
     componentName, 
     withSemicolon, 
     isTypescript,
-    '',
   );  
   const fileExtension = isTypescript ? 'tsx' : 'jsx';
   const filePath = `${uri.fsPath}/${componentName}/${componentName}.${fileExtension}`;

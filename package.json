@@ -1,7 +1,7 @@
 {
-  "name": "react-create-element-structure",
-  "displayName": "react-create-element-structure",
-  "description": "Create a dir/files structure for React element",
+  "name": "create-component",
+  "displayName": "react-create-component",
+  "description": "Create a dir/files structure for React component",
   "version": "1.0.1",
   "engines": {
     "vscode": "^1.91.0"

@@ -29,7 +29,7 @@ export const replaceTags = (
   name: string, 
   withSemicolon: boolean, 
   isTypescript: boolean,
-  testParentPath: string,
+  testParentPath?: string,
 ) => {
   const interfaceTs = isTypescript 
     ? interfaceModel
@@ -43,5 +43,5 @@ export const replaceTags = (
     .replace(/{{SEMICOLON}}/g, withSemicolon ? ';' : '')
     .replace(/{{INTERFACE}}/g, interfaceTs)
     .replace(/{{PROPS}}/g, props)
-    .replace(/{{IMPORT_PATH}}/g, testParentPath);
+    .replace(/{{IMPORT_PATH}}/g, testParentPath || '');
 };

@@ -1,6 +1,6 @@
-# react-create-element-structure README
+# create-component README
 
-This is the README for your extension "react-create-element-structure". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "create-component". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
