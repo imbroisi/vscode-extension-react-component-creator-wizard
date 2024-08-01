@@ -34,6 +34,15 @@ async function commun(
       return;
     }
 
+    const DirPath = `${uri.fsPath}/${componentName}`;
+    const isDirExist = await vscode.workspace.fs.stat(vscode.Uri.file(DirPath)).then(() => true, () => false);
+    if (isDirExist) {
+      vscode.window.showErrorMessage('Directory already exist');
+      return;
+    }
+
+    console.log('OPS!');
+
     if (!validateComponentName(componentName)) {
       vscode.window.showErrorMessage('Invalid Component name');
       return;
@@ -76,8 +85,6 @@ async function commun(
     }
 
     optionsSelected[id] = selectedOption;
-
-    vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
   }
 
   if (type === 'setup') {

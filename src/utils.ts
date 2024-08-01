@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import interfaceModel from './models/interface';
 
 export const trimString = (multiLineString: string) => {
   const lines = multiLineString.split('\n');
@@ -21,4 +22,24 @@ export const writeContentToFile = (filePath: string, fileContent: string) => {
 export const validateComponentName = (componentName: string) => {
   const componentNameRegex = /^[A-Z][A-Za-z0-9]{1,}$/;
   return componentNameRegex.test(componentName);
+};
+
+export const replaceTags = (
+  component: string, 
+  name: string, 
+  withSemicolon: boolean, 
+  isTypescript: boolean
+) => {
+  const interfaceTs = isTypescript 
+    ? interfaceModel
+      .replace(/{{NAME}}/g, name)
+      .replace(/{{SEMICOLON}}/g, withSemicolon ? ';' : '')
+    : '';
+  const props = isTypescript ? `props: ${name}Props` : '';
+
+  return component
+    .replace(/{{NAME}}/g, name)
+    .replace(/{{SEMICOLON}}/g, withSemicolon ? ';' : '')
+    .replace(/{{INTERFACE}}/g, interfaceTs)
+    .replace(/{{PROPS}}/g, props);
 };
