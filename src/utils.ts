@@ -11,12 +11,12 @@ export const trimString = (multiLineString: string) => {
   return lines.map(line => line.slice(extraSpaces)).join('\n');
 };
 
-export const writeContentToFile = (filePath: string, fileContent: string) => {
+export const writeContentToFile = async (filePath: string, fileContent: string) => {
   const fileUri = vscode.Uri.file(filePath);
   const writeOperation = new vscode.WorkspaceEdit();
   writeOperation.createFile(fileUri, { ignoreIfExists: true });
   writeOperation.insert(fileUri, new vscode.Position(0, 0), trimString(fileContent));
-  vscode.workspace.applyEdit(writeOperation);
+  await vscode.workspace.applyEdit(writeOperation);
 };
 
 export const validateComponentName = (componentName: string) => {
@@ -28,7 +28,8 @@ export const replaceTags = (
   component: string, 
   name: string, 
   withSemicolon: boolean, 
-  isTypescript: boolean
+  isTypescript: boolean,
+  testParentPath: string,
 ) => {
   const interfaceTs = isTypescript 
     ? interfaceModel
@@ -41,5 +42,6 @@ export const replaceTags = (
     .replace(/{{NAME}}/g, name)
     .replace(/{{SEMICOLON}}/g, withSemicolon ? ';' : '')
     .replace(/{{INTERFACE}}/g, interfaceTs)
-    .replace(/{{PROPS}}/g, props);
+    .replace(/{{PROPS}}/g, props)
+    .replace(/{{IMPORT_PATH}}/g, testParentPath);
 };

@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
 
-export const createStorybookFile = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+export const createStorybookFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
   if (optionsSelected.storybook === 'No') {
     return;
   }
@@ -65,5 +65,5 @@ export const createStorybookFile = (uri: vscode.Uri, componentName: string, opti
     }${semicolon}
   `;
 
-  writeContentToFile(filePath, fileContent);
+  await writeContentToFile(filePath, fileContent);
 };

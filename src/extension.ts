@@ -41,8 +41,6 @@ async function commun(
       return;
     }
 
-    console.log('OPS!');
-
     if (!validateComponentName(componentName)) {
       vscode.window.showErrorMessage('Invalid Component name');
       return;

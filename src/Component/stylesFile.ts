@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { writeContentToFile } from '../utils';
 import { OptionsSelected } from '../extension';
 
-export const createStylesFile = (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+export const createStylesFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
   const semicolon = optionsSelected.semicolon === 'No' ? '' : ';';
   let filePath = '';
   let fileContent = '';
@@ -39,5 +39,5 @@ export const createStylesFile = (uri: vscode.Uri, componentName: string, options
       break;
   }
 
-  writeContentToFile(filePath, fileContent);
+  await writeContentToFile(filePath, fileContent);
 };
