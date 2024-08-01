@@ -1,9 +1,9 @@
 import * as vscode from 'vscode';
-import { createIndexFile } from './indexFile';
-import { createComponentFile } from './componentFile';
-import { createStylesFile } from './stylesFile';
-import { createTestsFile } from './testsFile';
-import { createStorybookFile } from './storybookFile';
+import { createIndexFile } from './createIndexFile';
+import { createComponentFile } from './createComponentFile';
+import { createStylesFile } from './createStylesFile';
+import { createTestsFile } from './createTestsFile';
+import { createStorybookFile } from './createStorybookFile';
 import { OptionsSelected } from '../extension';
 
 export const createComponent = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
