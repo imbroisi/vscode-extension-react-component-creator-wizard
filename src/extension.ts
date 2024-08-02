@@ -99,11 +99,11 @@ async function commun(
 }
 
 export function activate(context: vscode.ExtensionContext) {  
-  const create = vscode.commands.registerCommand('extension.createReactComponent', (uri: vscode.Uri) => {
+  const create = vscode.commands.registerCommand('extension.createReactComponentWizard', (uri: vscode.Uri) => {
     commun(context, uri, 'create');
   });
 
-  const setup = vscode.commands.registerCommand('extension.createReactComponentSetup', (uri: vscode.Uri) => {
+  const setup = vscode.commands.registerCommand('extension.createReactComponentWizardCustomize', (uri: vscode.Uri) => {
     commun(context, uri, 'setup');
   });
 

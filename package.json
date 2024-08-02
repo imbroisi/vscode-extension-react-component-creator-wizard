@@ -18,25 +18,25 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.createReactComponent",
-        "title": "Create Component Structure"
+        "command": "extension.createReactComponentWizard",
+        "title": "Component Creator Wizard"
       },
       {
-        "command": "extension.createReactComponentSetup",
-        "title": "Change Default Settings"
+        "command": "extension.createReactComponentWizardCustomize",
+        "title": "Customize Default Settings..."
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.createReactComponent",
+          "command": "extension.createReactComponentWizard",
           "when": "explorerResourceIsFolder",
-          "group": "createReactComponentGroup"
+          "group": "createReactComponentWizardGroup@1"
         },
         {
-          "command": "extension.createReactComponentSetup",
+          "command": "extension.createReactComponentWizardCustomize",
           "when": "explorerResourceIsFolder",
-          "group": "createReactComponentGroup"
+          "group": "createReactComponentWizardGroup@2"
         }
       ]
     }

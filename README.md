@@ -1,101 +1,67 @@
-# React Creat Component Tree
+# VSCode Extension: React Component Creator Wizard
 
-Generate your React Component tree easely. With multiple customizable features.
+## Description
+This Visual Studio Code extension helps you create a folder and file structure for React components quickly and efficiently. It provides context menu commands to generate the necessary files and folders for a new React component, ensuring consistency and saving development time.
 
 ## Features
+- Create a new React component structure with a quick operation - right clicking in the folder you want your component, choose a name, and that's it. 
+- Customize the file extensions and styles used in the component structure.
+- Optional support for Storybook and Unit Tests (React Testing Library).
 
-Right-click on the folder where the component will be located, choose "Create Component Structure" and define a name for the component. That's it.  
+## Example of Structure Result
+```bash
+SomeFolder [e.g. components]
+│
+│── MyComponent [Folder]
+      │
+      │── index.{jsx | tsx}
+      │
+      │── MyComponent.{jsx | tsx}
+      │
+      │── MyComponent.styles.{js | ts | css | scss | sass}
+      │
+      │── MyComponent.stories.{jsx | tsx} [optional]
+      │
+      └── MyComponent.test.{jsx | tsx} [or inside a __tests__ folder] [optional]
+```
 
-- Create your component in JavaScript or TypeScript.
-- Select Styled Components, Tailwind or CSS for styling.
-- Decide if you want a test file (React Testing Library).
-- If so, whether or not it will be inside a *\_\_test__* folder.
-- Decide if you want a Storybook file.
-- The component can be declared as a function or an arrow function.
-- Choose whether or not to use a semicolon at the end of each statement.
+## How to Use
+1. Right click on a folder in the Explorer view (`SomeFolder` in the exemple above).
+2. Select `Component Creator Wizard` to generate a new component structure.
+3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
+4. There, give your component a name and press `Enter`.
+5. Your component is created! 🥳 🎉
 
-Each item above has a default value, which can be reconfigured. 
-In addition, when a component is created you can choose a value other than the default, just for that component.
+Your component has been created with the default options. But you can have options other than the initial default, as we'll see in a moment.
 
-## Requirements
+## Installation
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
+3. Search for `React Component Creator Wizard`.
+4. Click `Install` to install the extension.
+5. Reload Visual Studio Code to activate the extension.
 
-VS Code v1.91.0 and above.
+## Configuration
+You can customize the default file extensions and styles used in the component structure by modifying the default extension settings.
+1. Right click on any folder in the Explorer view.
+2. Click on `Customize Default Settings...`.
+3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
+4. Choose `TypeScript` or `JavaScript` as the component language.
+5. Then choose what kind of styling you will use in the component.
+6. Note that there is an `Ask on component creation` option. By selecting it, you will not set any styling strategy as default. Instead, you will select the style type only when you are creating a component.
+7. After choosing one of the style options, you will ask about unit tests. Choose one option.
+8. And so one.
+9. At the end of the process, the new default values are set and will be used when creating the next components.
 
+## License
+This project is licensed under the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
+## Contributing
+Contributions are welcome! Please read the CONTRIBUTING file for details on how to contribute to this project.
 
+## Author
+Luiz Imbroisi - Ender
+- Email: ender.imbroisi@gmail.com
 
-
-
-
-
-
-
-
-
-
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Acknowledgments
+- Thanks to the open-source community for their valuable contributions.

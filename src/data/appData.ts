@@ -25,8 +25,8 @@ export const appData = [
         id: 'testing',
         question: 'Create unit test file?',
         options: [
-            'Yes, inside a __tests__ folder',
             'Yes, without a __tests__ folder',
+            'Yes, inside a __tests__ folder',
             'No'
         ],
         include_option_ask_on_component_creation: 'yes',
@@ -35,8 +35,8 @@ export const appData = [
         id: 'storybook',
         question: 'Create storybook file?',
         options: [
-            'No',
             'Yes',
+            'No',
         ],
         include_option_ask_on_component_creation: 'yes',
     },
