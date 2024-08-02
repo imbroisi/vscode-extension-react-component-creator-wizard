@@ -6,7 +6,7 @@ This Visual Studio Code extension helps you create a folder and file structure f
 ## Features
 - Create a new React component structure with a quick operation - right clicking in the folder you want your component, choose a name, and that's it. 
 - Customize the file extensions and styles used in the component structure.
-- Optional support for Storybook and Unit Tests (React Testing Library).
+- Support for Storybook and Unit Tests (React Testing Library).
 
 ## Example of Structure Result
 ```bash
