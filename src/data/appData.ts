@@ -15,6 +15,8 @@ export const appData = [
         options: [
             'Styled Components',
             'Tailwind',
+            'Sass (SCSS)',
+            'Sass (Indented Syntax)',
             'CSS'
         ],
         include_option_ask_on_component_creation: 'yes',
