@@ -4,7 +4,7 @@ import { OptionsSelected } from '../extension';
 import modelStyleCss from '../models/model.style_css';
 import modelStyleStyledComponent from '../models/model.style_styledComponents';
 
-export const createStylesFile = async (uri: vscode.Uri, componentName: string, optionsSelected: OptionsSelected) => {
+export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSelected: OptionsSelected) => {
   const withSemicolon = optionsSelected.withSemicolon !== 'No';
   const isTypescript = optionsSelected.language === 'TypeScript';
 
@@ -14,14 +14,26 @@ export const createStylesFile = async (uri: vscode.Uri, componentName: string, o
   switch (optionsSelected.style) {
     case 'Styled Components':
       const fileExtension = optionsSelected.language === 'TypeScript' ? 'ts' : 'js';
-      filePath = `${uri.fsPath}/${componentName}/${componentName}.styles.${fileExtension}`;
-      fileContent = replaceTags(modelStyleStyledComponent, componentName, withSemicolon, isTypescript); 
+      filePath = `${uri.fsPath}/${name}/${name}.styles.${fileExtension}`;
+      fileContent = replaceTags({
+        optionsSelected,
+        component: modelStyleStyledComponent,
+        name, 
+        // withSemicolon, 
+        // isTypescript
+      }); 
       break;
     case 'Tailwind':
       return;
     case 'CSS':
-      filePath = `${uri.fsPath}/${componentName}/${componentName}.css`;
-      fileContent = replaceTags(modelStyleCss, componentName, withSemicolon, isTypescript);
+      filePath = `${uri.fsPath}/${name}/${name}.css`;
+      fileContent = replaceTags({
+        optionsSelected,
+        component: modelStyleCss,
+        name,
+        // withSemicolon,
+        // isTypescript
+      });
       break;
   }
 

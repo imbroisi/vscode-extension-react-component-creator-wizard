@@ -23,7 +23,7 @@
       },
       {
         "command": "extension.createReactComponentSetup",
-        "title": "Setup Component Structure..."
+        "title": "Change Default Settings"
       }
     ],
     "menus": {

@@ -1,8 +1,38 @@
-# create-component README
+# React Creat Component Tree
 
-This is the README for your extension "create-component". After writing up a brief description, we recommend including the following sections.
+Generate your React Component tree easely. With multiple customizable features.
 
 ## Features
+
+Right-click on the folder where the component will be located, choose "Create Component Structure" and define a name for the component. That's it.  
+
+- Create your component in JavaScript or TypeScript.
+- Select Styled Components, Tailwind or CSS for styling.
+- Decide if you want a test file (React Testing Library).
+- If so, whether or not it will be inside a *\_\_test__* folder.
+- Decide if you want a Storybook file.
+- The component can be declared as a function or an arrow function.
+- Choose whether or not to use a semicolon at the end of each statement.
+
+Each item above has a default value, which can be reconfigured. 
+In addition, when a component is created you can choose a value other than the default, just for that component.
+
+## Requirements
+
+VS Code v1.91.0 and above.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 

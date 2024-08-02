@@ -7,26 +7,27 @@ import modelComponentCss from '../models/model.component_css';
 
 export const createComponentFile = async (
   uri: vscode.Uri,
-  componentName: string,
+  name: string,
   optionsSelected: OptionsSelected
 ) => {
-  const componentChoosen = {
+  const component = {
     'Styled Components': componentStyledComponent,
     Tailwind: modelComponentTailwind,
     CSS: modelComponentCss,
   }[optionsSelected.style] || componentStyledComponent;
 
-  const withSemicolon = optionsSelected.withSemicolon !== 'No';
-  const isTypescript = optionsSelected.language === 'TypeScript';
+  // const withSemicolon = optionsSelected.withSemicolon !== 'No';
+  // const isTypescript = optionsSelected.language === 'TypeScript';
 
-  const fileContent = replaceTags(
-    componentChoosen, 
-    componentName, 
-    withSemicolon, 
-    isTypescript,
-  );  
-  const fileExtension = isTypescript ? 'tsx' : 'jsx';
-  const filePath = `${uri.fsPath}/${componentName}/${componentName}.${fileExtension}`;
+  const fileContent = replaceTags({
+    optionsSelected,
+    component,
+    name,
+    // withSemicolon, 
+    // isTypescript,
+});  
+  const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';
+  const filePath = `${uri.fsPath}/${name}/${name}.${fileExtension}`;
 
   await writeContentToFile(filePath, fileContent);
 

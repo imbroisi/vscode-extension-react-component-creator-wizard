@@ -34,9 +34,9 @@ async function commun(
       return;
     }
 
-    const DirPath = `${uri.fsPath}/${componentName}`;
-    const isDirExist = await vscode.workspace.fs.stat(vscode.Uri.file(DirPath)).then(() => true, () => false);
-    if (isDirExist) {
+    const FolderPath = `${uri.fsPath}/${componentName}`;
+    const isPathExist = await vscode.workspace.fs.stat(vscode.Uri.file(FolderPath)).then(() => true, () => false);
+    if (isPathExist) {
       vscode.window.showErrorMessage('Directory already exist');
       return;
     }
@@ -48,12 +48,12 @@ async function commun(
   }
 
   for (let data of appData) {
-    const { id, question, options, ask_on_component_creation_default } = data;
+    const { id, question, options, include_option_ask_on_component_creation } = data;
     const previousSelection: any = previousSelections?.[id];
 
     const displayOption = [...options];
     if (type === 'setup') {
-      if (ask_on_component_creation_default) {
+      if (include_option_ask_on_component_creation) {
         displayOption.push(ASK_ON_COMPONENT_CREATION);
       }
     }
@@ -62,7 +62,7 @@ async function commun(
       const index = displayOption.indexOf(previousSelection);
       if (index > -1) {
         displayOption.splice(index, 1);
-        if (type === 'setup' || ask_on_component_creation_default) {
+        if (type === 'setup' || include_option_ask_on_component_creation) {
           displayOption.unshift(previousSelection);
         }
       }

@@ -17,7 +17,7 @@ export const appData = [
             'Tailwind',
             'CSS'
         ],
-        ask_on_component_creation_default: 'yes',
+        include_option_ask_on_component_creation: 'yes',
     },
     {
         id: 'testing',
@@ -27,6 +27,7 @@ export const appData = [
             'Yes, without a __tests__ folder',
             'No'
         ],
+        include_option_ask_on_component_creation: 'yes',
     },
     {
         id: 'storybook',
@@ -35,7 +36,15 @@ export const appData = [
             'No',
             'Yes',
         ],
-        ask_on_component_creation_default: 'yes',
+        include_option_ask_on_component_creation: 'yes',
+    },
+    {
+        id: 'function',
+        question: 'Choose the component declaration',
+        options: [
+            'Arrow function',
+            'Function',
+        ],
     },
     {
         id: 'semicolon',
@@ -45,5 +54,4 @@ export const appData = [
             'No'
         ],
     },
-
 ];
