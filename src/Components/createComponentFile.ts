@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { replaceTags, writeContentToFile } from '../utils';
+import { replaceTags } from '../utils/replaceTags';
+import { writeContentToFile } from '../utils/writeContentToFile';
 import { OptionsSelected } from '../extension';
 import componentStyledComponent from '../models/model.component_styledComponents';
 import modelComponentTailwind from '../models/model.component_tailwind';
@@ -16,16 +17,11 @@ export const createComponentFile = async (
     CSS: modelComponentCss,
   }[optionsSelected.style] || componentStyledComponent;
 
-  // const withSemicolon = optionsSelected.withSemicolon !== 'No';
-  // const isTypescript = optionsSelected.language === 'TypeScript';
-
   const fileContent = replaceTags({
     optionsSelected,
     component,
     name,
-    // withSemicolon, 
-    // isTypescript,
-});  
+  });  
   const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';
   const filePath = `${uri.fsPath}/${name}/${name}.${fileExtension}`;
 

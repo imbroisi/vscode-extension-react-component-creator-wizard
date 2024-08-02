@@ -1,13 +1,11 @@
 
 import * as vscode from 'vscode';
-import { replaceTags, writeContentToFile } from '../utils';
+import { replaceTags } from '../utils/replaceTags';
+import { writeContentToFile } from '../utils/writeContentToFile';
 import modelIndexFile from '../models/model.index';
 import { OptionsSelected } from '../extension';
 
 export const createIndexFile = async (uri: vscode.Uri, name: string, optionsSelected: OptionsSelected) => {
-    // const withSemicolon = optionsSelected.withSemicolon !== 'No';
-    // const isTypescript = optionsSelected.language === 'TypeScript';
-  
     const fileContent = replaceTags({
       optionsSelected,
       component: modelIndexFile, 

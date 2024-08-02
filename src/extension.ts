@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import createAllFiles from './Components';
 import { appData, ASK_ON_COMPONENT_CREATION } from './data/appData';
-import { validateComponentName } from './utils';
+import { validateComponentName } from './utils/validateComponentName';
 
 export interface OptionsSelected {
   [key: string]: string

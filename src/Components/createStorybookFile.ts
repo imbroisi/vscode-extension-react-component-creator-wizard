@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { replaceTags, writeContentToFile } from '../utils';
+import { replaceTags } from '../utils/replaceTags';
+import { writeContentToFile } from '../utils/writeContentToFile';
 import { OptionsSelected } from '../extension';
 import modelStorybook from '../models/model.storybook';
 
@@ -8,15 +9,10 @@ export const createStorybookFile = async (uri: vscode.Uri, name: string, options
     return;
   }
 
-  // const withSemicolon = optionsSelected.withSemicolon !== 'No';
-  // const isTypescript = optionsSelected.language === 'TypeScript';
-
   const fileContent = replaceTags({
     optionsSelected,
     component: modelStorybook,
     name,
-    // withSemicolon,
-    // isTypescript
   });
   
   const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';

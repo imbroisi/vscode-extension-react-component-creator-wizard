@@ -1,15 +1,13 @@
 import * as vscode from 'vscode';
-import { replaceTags, writeContentToFile } from '../utils';
+import { replaceTags } from '../utils/replaceTags';
+import { writeContentToFile } from '../utils/writeContentToFile';
 import { OptionsSelected } from '../extension';
 import modelStyleCss from '../models/model.style_css';
 import modelStyleStyledComponent from '../models/model.style_styledComponents';
 
 export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSelected: OptionsSelected) => {
-  const withSemicolon = optionsSelected.withSemicolon !== 'No';
-  const isTypescript = optionsSelected.language === 'TypeScript';
-
-  let filePath = '';
-  let fileContent = '';
+  let filePath;
+  let fileContent;
 
   switch (optionsSelected.style) {
     case 'Styled Components':
@@ -19,8 +17,6 @@ export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSel
         optionsSelected,
         component: modelStyleStyledComponent,
         name, 
-        // withSemicolon, 
-        // isTypescript
       }); 
       break;
     case 'Tailwind':
@@ -31,10 +27,10 @@ export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSel
         optionsSelected,
         component: modelStyleCss,
         name,
-        // withSemicolon,
-        // isTypescript
       });
       break;
+    default:
+      return;
   }
 
   await writeContentToFile(filePath, fileContent);
