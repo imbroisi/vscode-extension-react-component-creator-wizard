@@ -5,7 +5,7 @@ import modelFunction from '../models/model.function_type_function';
 
 interface ReplaceTags {
   optionsSelected: {[key: string]: string},
-  component: string,
+  component?: string,
   name: string
 }
 
@@ -15,6 +15,10 @@ export const replaceTags = (funcProps: ReplaceTags) => {
     component,
     name,
   } = funcProps;
+
+  if (!component) {
+    return '// component not found';
+  }
 
   const testParentPath = optionsSelected.testing.indexOf('inside') === -1 ? '.' : '..';
   const isTypescript = optionsSelected.language === 'TypeScript';

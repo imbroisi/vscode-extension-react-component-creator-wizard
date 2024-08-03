@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722698434912" clover="3.2.0">
-  <project timestamp="1722698434912" name="All files">
-    <metrics statements="37" coveredstatements="37" conditionals="16" coveredconditionals="16" methods="3" coveredmethods="3" elements="56" coveredelements="56" complexity="0" loc="37" ncloc="37" packages="3" files="10" classes="10"/>
+<coverage generated="1722711214181" clover="3.2.0">
+  <project timestamp="1722711214181" name="All files">
+    <metrics statements="43" coveredstatements="42" conditionals="15" coveredconditionals="14" methods="3" coveredmethods="3" elements="61" coveredelements="59" complexity="0" loc="43" ncloc="43" packages="3" files="12" classes="12"/>
     <package name="components">
-      <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="createComponentFile.ts" path="/Users/luizimbroisifilho/code/vscode-extensions/create-component/src/components/createComponentFile.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="5" type="stmt"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="30" count="5" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="29" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
       </file>
     </package>
     <package name="models">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="model.component_css.ts" path="/Users/luizimbroisifilho/code/vscode-extensions/create-component/src/models/model.component_css.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="model.component_sass.ts" path="/Users/luizimbroisifilho/code/vscode-extensions/create-component/src/models/model.component_sass.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="model.component_scss.ts" path="/Users/luizimbroisifilho/code/vscode-extensions/create-component/src/models/model.component_scss.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
@@ -52,24 +62,26 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="12" methods="2" coveredmethods="2"/>
+      <metrics statements="20" coveredstatements="19" conditionals="13" coveredconditionals="12" methods="2" coveredmethods="2"/>
       <file name="replaceTags.ts" path="/Users/luizimbroisifilho/code/vscode-extensions/create-component/src/utils/replaceTags.ts">
-        <metrics statements="15" coveredstatements="15" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
+        <metrics statements="17" coveredstatements="16" conditionals="13" coveredconditionals="12" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="17" count="10" type="stmt"/>
-        <line num="19" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="10" type="stmt"/>
-        <line num="21" count="10" type="stmt"/>
-        <line num="22" count="10" type="stmt"/>
-        <line num="24" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="29" count="10" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="19" count="11" type="cond" truecount="0" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="11" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="28" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="11" type="stmt"/>
       </file>
       <file name="validateComponentName.ts" path="/Users/luizimbroisifilho/code/vscode-extensions/create-component/src/utils/validateComponentName.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

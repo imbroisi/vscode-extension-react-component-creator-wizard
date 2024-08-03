@@ -4,6 +4,7 @@
   "description": "Create folder and files structure for React component",
   "version": "0.0.1-beta",
   "engines": {
+    "node": ">=18.0.0 <21.0.0",
     "vscode": "^1.91.0"
   },
   "author": {

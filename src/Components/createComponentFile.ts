@@ -5,6 +5,8 @@ import { OptionsSelected } from '../extension';
 import componentStyledComponent from '../models/model.component_styledComponents';
 import modelComponentTailwind from '../models/model.component_tailwind';
 import modelComponentCss from '../models/model.component_css';
+import modelComponentScss from '../models/model.component_scss';
+import modelComponentSass from '../models/model.component_sass';
 
 export const createComponentFile = async (
   uri: vscode.Uri,
@@ -15,7 +17,9 @@ export const createComponentFile = async (
     'Styled Components': componentStyledComponent,
     Tailwind: modelComponentTailwind,
     CSS: modelComponentCss,
-  }[optionsSelected.style] || '';
+    SCSS: modelComponentScss,
+    'Sass (Indented Syntax)': modelComponentSass,
+  }[optionsSelected.style];
 
   const fileContent = replaceTags({
     optionsSelected,
