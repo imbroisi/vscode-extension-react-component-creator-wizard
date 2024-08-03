@@ -1,8 +1,8 @@
 {
   "name": "vscode-extension-react-component-structure",
-  "displayName": "vscode-extension-react-component-structure",
+  "displayName": "React New Component Wizard",
   "description": "Create folder and files structure for React component",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "engines": {
     "node": ">=18.0.0 <21.0.0",
     "vscode": "^1.91.0"
@@ -22,6 +22,7 @@
     "onCommand:extension.createReactComponentWizard",
     "onCommand:extension.createReactComponentWizardCustomize"
   ],
+  "icon": "images/logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/imbroisi/vscode-extension-react-component-creator-wizard"
@@ -30,7 +31,7 @@
     "commands": [
       {
         "command": "extension.createReactComponentWizard",
-        "title": "Component Creator Wizard"
+        "title": "New Component Wizard"
       },
       {
         "command": "extension.createReactComponentWizardCustomize",

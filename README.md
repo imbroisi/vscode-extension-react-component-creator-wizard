@@ -1,5 +1,9 @@
 # VSCode Extension: React Component Creator Wizard
 
+<div style="width:20%; margin-left: 20px;">
+  <img src="images/logo.png">
+</div>
+
 ## Description
 This Visual Studio Code extension helps you create a folder and file structure for React components quickly and efficiently. It provides context menu commands to generate the necessary files and folders for a new React component, ensuring consistency and saving development time.
 
