@@ -1,6 +1,6 @@
 export default 
-`
-export interface {{NAME}}Props {
+`export interface {{NAME}}Props {
 
 }
+
 `;

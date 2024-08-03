@@ -8,6 +8,6 @@ module.exports = {
         tsconfig: './tsconfig.json',
       },
     },
-    testPathIgnorePatterns: ['<rootDir>/__tests-vscode__/'],
+    testPathIgnorePatterns: ['<rootDir>/src/__tests-vscode__/'],
     testMatch: ['**/src/**/*.test.ts']
   };

@@ -1,10 +1,10 @@
 export default
-`{{INTERFACE}}
-export default function {{NAME}}({{PROPS}}) {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1>Hello</h1>
-    </div>
-  ){{SEMICOLON}}
-}
-`;
+'{{INTERFACE}}' +
+'export default function {{NAME}}({{PROPS}}) {\n' +
+'  return (\n' +
+'    <div className="min-h-screen flex items-center justify-center">\n' +
+'      <h1>Hello</h1>\n' +
+'    </div>\n' +
+'  ){{SEMICOLON}}\n' +
+'}\n';
+
