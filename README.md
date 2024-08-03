@@ -9,8 +9,9 @@ This Visual Studio Code extension helps you create a folder and file structure f
 - Support for Storybook and Unit Tests (React Testing Library).
 
 ## Example of Structure Result
+Assuming you name your component `MyComponent`:
 ```bash
-SomeFolder [e.g. components]
+someFolder [e.g. components]
 │
 │── MyComponent [Folder]
       │
@@ -23,6 +24,26 @@ SomeFolder [e.g. components]
       │── MyComponent.stories.{jsx | tsx} [optional]
       │
       └── MyComponent.test.{jsx | tsx} [or inside a __tests__ folder] [optional]
+```
+
+## Example of File Created
+Assuming you name your component `MyComponent`, using TypeScript and Tailwind.
+
+This will be the content of `MyComponent.tsx`:
+
+```bash
+export interface MyComponentProps {
+
+}
+
+export default function MyComponent(props: MyComponentProps) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <h1>Hello</h1>
+    </div>
+  );
+}
+
 ```
 
 ## How to Use
@@ -54,10 +75,10 @@ You can customize the default file extensions and styles used in the component s
 9. At the end of the process, the new default values are set and will be used when creating the next components.
 
 ## License
-This project is licensed under the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
-Contributions are welcome! Please read the CONTRIBUTING file for details on how to contribute to this project.
+Contributions are welcome! Please read the [CONTRIBUTING](CONTRIBUTING.md) file for details on how to contribute to this project.
 
 ## Author
 Luiz Imbroisi - Ender

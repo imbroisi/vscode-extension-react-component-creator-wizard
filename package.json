@@ -10,7 +10,7 @@
     "name": "Luiz Imbroisi - Ender",
     "email": "ender.imbroisi@gmail.com"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "categories": [
     "Other"
   ],
@@ -47,10 +47,14 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test",
-    "prepare": "husky"
+    "test:vscode": "vscode-test __tests-vscode__/**/*.test.ts",
+    "test:jest": "jest",
+    "prepare": "husky",
+    "test-tmp": "ts-node -r tsconfig-paths/register node_modules/mocha/bin/_mocha --require ts-node/register 'src/**/*.test.ts'"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.17",
+    "@types/jest": "^29.5.12",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
     "@types/vscode": "^1.91.0",
@@ -61,6 +65,9 @@
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
     "husky": "^9.1.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
 }

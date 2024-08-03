@@ -26,6 +26,6 @@ export const createComponentFile = async (
   const filePath = `${uri.fsPath}/${name}/${name}.${fileExtension}`;
 
   await writeContentToFile(filePath, fileContent);
-
+  
   return filePath;
 };
