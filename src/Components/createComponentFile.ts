@@ -15,7 +15,7 @@ export const createComponentFile = async (
     'Styled Components': componentStyledComponent,
     Tailwind: modelComponentTailwind,
     CSS: modelComponentCss,
-  }[optionsSelected.style] || componentStyledComponent;
+  }[optionsSelected.style] || '';
 
   const fileContent = replaceTags({
     optionsSelected,

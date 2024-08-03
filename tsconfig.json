@@ -6,7 +6,7 @@
 		"lib": [
 			"ES2022"
 		],
-		"types": ["jest"],
+		"types": ["node", "jest"],
 		"jsx": "react",
 		"sourceMap": true,
 		"rootDir": "src",

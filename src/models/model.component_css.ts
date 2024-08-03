@@ -6,5 +6,5 @@ export default
         <h1>Hello</h1>
     </div>
   ){{SEMICOLON}}
-}
+}XXXXXX
 `;

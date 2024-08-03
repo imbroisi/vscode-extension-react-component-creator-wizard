@@ -89,7 +89,7 @@ async function commun(
     try {
       context.globalState.update('optionsSelected', optionsSelected);
     } catch (error) {
-      console.error('Error saving the selected options', error);
+      // console.error('Error saving the selected options', error);
     }
   }
 
