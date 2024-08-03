@@ -2,7 +2,7 @@
   "name": "vscode-extension-react-component-structure",
   "displayName": "vscode-extension-react-component-structure",
   "description": "Create folder and files structure for React component",
-  "version": "0.0.1-beta",
+  "version": "1.0.1",
   "engines": {
     "node": ">=18.0.0 <21.0.0",
     "vscode": "^1.91.0"
@@ -11,11 +11,21 @@
     "name": "Luiz Imbroisi - Ender",
     "email": "ender.imbroisi@gmail.com"
   },
+  "publisher": "LuizImbroisi",
   "license": "MIT",
+  "pricing": "Free",
   "categories": [
     "Other"
   ],
   "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:extension.createReactComponentWizard",
+    "onCommand:extension.createReactComponentWizardCustomize"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imbroisi/vscode-extension-react-component-creator-wizard"
+  },
   "contributes": {
     "commands": [
       {
