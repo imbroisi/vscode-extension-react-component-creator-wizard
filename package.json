@@ -53,10 +53,7 @@
     "test-tmp": "ts-node -r tsconfig-paths/register node_modules/mocha/bin/_mocha --require ts-node/register 'src/**/*.test.ts'"
   },
   "devDependencies": {
-    "@types/chai": "^4.3.17",
     "@types/jest": "^29.5.12",
-    "@types/mocha": "^10.0.7",
-    "@types/node": "^22.1.0",
     "@types/vscode": "^1.91.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
