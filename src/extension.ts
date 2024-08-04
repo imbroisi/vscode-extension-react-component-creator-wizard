@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import createAllFiles from './components';
+import createAllFiles from './components/main';
 import { appData, ASK_ON_COMPONENT_CREATION } from './data/appData';
 import { validateComponentName } from './utils/validateComponentName';
 
@@ -7,13 +7,45 @@ export interface OptionsSelected {
   [key: string]: string
 }
 
+const getComponentName = async (uri: vscode.Uri) => {
+  const name = await vscode.window.showInputBox({
+    placeHolder: 'Enter the Component name',
+  });
+
+  if (!name) {
+    return { error: 'No file name entered' };
+  }
+
+  const FolderPath = `${uri.fsPath}/${name}`;
+  const isPathExist = await vscode.workspace.fs.stat(vscode.Uri.file(FolderPath)).then(() => true, () => false);
+  if (isPathExist) {
+    return { error: 'Directory already exist'};
+  }
+  if (!validateComponentName(name)) {
+    return { error: 'Invalid Component name'};
+  }
+
+  return { name };
+};
+
 async function commun(
   context: vscode.ExtensionContext,
   uri: vscode.Uri,
   type: string,
 ) {
-  let previousSelections: any = context.globalState.get<Record<string, OptionsSelected>>('optionsSelected');
+  // get the component name if the type is 'create'
+  let componentName: string | undefined = '';
+  if (type === 'create') {
+    const { name, error } = await getComponentName(uri);
+    if (error) {
+      vscode.window.showInformationMessage(error);
+      return;
+    }
+    componentName = name;
+  }
 
+  // get the options previous selected, if exists
+  let previousSelections: any = context.globalState.get<Record<string, OptionsSelected>>('optionsSelected');
   if (!previousSelections) {
     previousSelections = {};
     appData.forEach((data) => {
@@ -21,32 +53,8 @@ async function commun(
     });
   }
 
+  // prompt the user to select the options
   const optionsSelected: any = { ...previousSelections };
-  
-  let componentName: string | undefined = '';
-  if (type === 'create') {
-    componentName = await vscode.window.showInputBox({
-      placeHolder: 'Enter the Component name',
-    });
-
-    if (!componentName) {
-      vscode.window.showInformationMessage('No file name entered');
-      return;
-    }
-
-    const FolderPath = `${uri.fsPath}/${componentName}`;
-    const isPathExist = await vscode.workspace.fs.stat(vscode.Uri.file(FolderPath)).then(() => true, () => false);
-    if (isPathExist) {
-      vscode.window.showErrorMessage('Directory already exist');
-      return;
-    }
-
-    if (!validateComponentName(componentName)) {
-      vscode.window.showErrorMessage('Invalid Component name');
-      return;
-    }
-  }
-
   for (let data of appData) {
     const { id, question, options, include_option_ask_on_component_creation } = data;
     const previousSelection: any = previousSelections?.[id];
@@ -85,20 +93,23 @@ async function commun(
     optionsSelected[id] = selectedOption;
   }
 
+  // save the selected options
   if (type === 'setup') {
     try {
       context.globalState.update('optionsSelected', optionsSelected);
     } catch (error) {
-      // console.error('Error saving the selected options', error);
+      vscode.window.showErrorMessage(`Error saving the selected options: ${error}`);
+      return;
     }
   }
 
+  // create the files if the type is 'create'
   if (type === 'create') {
-    createAllFiles(uri, componentName, optionsSelected);
+    createAllFiles(uri, componentName || '', optionsSelected);
   }
 }
 
-export function activate(context: vscode.ExtensionContext) {  
+export function activate(context: vscode.ExtensionContext) {
   const create = vscode.commands.registerCommand('extension.createReactComponentWizard', (uri: vscode.Uri) => {
     commun(context, uri, 'create');
   });

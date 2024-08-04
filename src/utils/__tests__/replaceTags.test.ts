@@ -14,7 +14,6 @@ describe('replaceTags', () => {
     };
 
     const expectedOutput = 'Hello const World = (props: WorldProps) => {';
-
     const result = replaceTags(funcProps);
 
     expect(result).toBe(expectedOutput);
@@ -33,7 +32,6 @@ describe('replaceTags', () => {
     };
 
     const expectedOutput = 'Hello const World = (props: WorldProps) => {';
-
     const result = replaceTags(funcProps);
 
     expect(result).toBe(expectedOutput);
@@ -52,7 +50,6 @@ describe('replaceTags', () => {
     };
 
     const expectedOutput = 'Hello const World = () => {';
-
     const result = replaceTags(funcProps);
 
     expect(result).toBe(expectedOutput);
@@ -71,7 +68,6 @@ describe('replaceTags', () => {
     };
 
     const expectedOutput = 'Hello const World = (props: WorldProps) => {';
-
     const result = replaceTags(funcProps);
 
     expect(result).toBe(expectedOutput);
@@ -90,7 +86,6 @@ describe('replaceTags', () => {
     };
 
     const expectedOutput = 'Hello export default function World(props: WorldProps) {';
-
     const result = replaceTags(funcProps);
 
     expect(result).toBe(expectedOutput);

@@ -1,6 +1,5 @@
 export default
-`/* istanbul ignore file */
-import { StoryObj } from '@storybook/react'{{SEMICOLON}}
+`import { StoryObj } from '@storybook/react'{{SEMICOLON}}
 import {{NAME}}, { {{NAME}}Props } from './{{NAME}}'{{SEMICOLON}}
 
 const {{NAME}}Story = (props: {{NAME}}Props) => {

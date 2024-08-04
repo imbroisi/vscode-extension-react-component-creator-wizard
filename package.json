@@ -37,7 +37,7 @@
     "commands": [
       {
         "command": "extension.createReactComponentWizard",
-        "title": "✍️ New React Component"
+        "title": "⚛️ New React Component"
       },
       {
         "command": "extension.createReactComponentWizardCustomize",

@@ -77,7 +77,7 @@ describe('createComponentFile', () => {
       '\n' +
       'export default function MyComponent(props: MyComponentProps) {\n' +
       '  return (\n' +
-      '    <div className=\"min-h-screen flex items-center justify-center\">\n' +
+      '    <div className=\"flex items-center justify-center\">\n' +
       '      <h1>Hello</h1>\n' +
       '    </div>\n' +
       '  );\n' +

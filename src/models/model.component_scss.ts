@@ -1,5 +1,6 @@
 export default 
-'import \'./{{NAME}}.scss\'{{SEMICOLON}}\n\n' +
+'import \'./{{NAME}}.scss\'{{SEMICOLON}}\n' + 
+'\n' +
 '{{INTERFACE}}' +
 '{{FUNCTION_TYPE}}\n' +
 '  return (\n' +

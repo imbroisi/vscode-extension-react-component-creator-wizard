@@ -18,8 +18,8 @@ export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSel
       fileContent = replaceTags({
         optionsSelected,
         component: modelStyleStyledComponent,
-        name, 
-      }); 
+        name,
+      });
       break;
     case 'Tailwind':
       return;

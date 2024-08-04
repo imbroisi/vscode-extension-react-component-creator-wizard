@@ -26,5 +26,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.0.4] - 2024-08-05
 ### Improved
-- Better informations in Marketplace page.
-
+- More information on the Marketplace page.
+- Improvements to the README

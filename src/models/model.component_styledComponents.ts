@@ -1,5 +1,6 @@
 export default 
-'import { Container } from \'./{{NAME}}.styles\'{{SEMICOLON}}\n\n' +
+'import { Container } from \'./{{NAME}}.styles\'{{SEMICOLON}}\n' +
+'\n' +
 '{{INTERFACE}}' +
 '{{FUNCTION_TYPE}}\n' +
 '  return (\n' +

@@ -5,12 +5,12 @@
 </center>
 
 ## Description
-This Visual Studio Code extension helps you create a folder and file structure for React components quickly and efficiently. It provides context menu commands to generate the necessary files and folders for a new React component, ensuring consistency and saving development time.
+This Visual Studio Code Extension helps you create a folder and file structure for React components quickly and efficiently. It provides context menu commands to generate the files and folders needed for a new React component, ensuring consistency and saving development time.
 
 ## Features
-- Create a new React component structure with a quick operation - right clicking in the folder you want your component, choose a name, and that's it. 
-- Customize the file extensions and styles used in the component structure.
-- Support for Storybook and Unit Tests (React Testing Library).
+- Create a new React component structure with a quick operation - right-click on the folder where you want the component, choose a name and you're done. 
+- Customize the files and styles used in the component structure.
+- Support for Storybook and Unit Tests (React Test Library).
 
 ## Example of Structure Result
 Assuming you name your component `MyComponent`:
@@ -30,74 +30,67 @@ someFolder [e.g. components]
       └── MyComponent.test.{jsx | tsx} [or inside a __tests__ folder] [optional]
 ```
 
-## Example of File Created
-Assuming you name your component `MyComponent`, using TypeScript and Tailwind.
+## Example of Content of a Component Created
+Suppose you name your component `LetsRock`, using `TypeScript` and `Tailwind`.
 
-This will be the content of `MyComponent.tsx`:
+This will be the content of `LetsRock.tsx`:
 
-```bash
-export interface MyComponentProps {
+```tsx
+export interface LetsRockProps {
 
 }
 
-export default function MyComponent(props: MyComponentProps) {
+export default function LetsRock(props: LetsRockProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <h1>Hello</h1>
     </div>
   );
 }
-
 ```
 
 ## How to Use
-1. Right click on a folder in the Explorer view (`SomeFolder` in the exemple above).
-2. Select `✍️ New React Component` to generate a new component structure.
-3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
+1. Right-click on a folder in the Explorer view (`someFolder` in the previous example).
+2. Select `New React Component` to generate a new component structure.
+3. This will open the VS Code `Command Palette` at the top of the VS Code editor.
 4. There, give your component a name and press `Enter`.
-5. Your component is created! 🥳 🎉
+5. Your component has been created with the default options.
 
-Your component has been created with the default options. But you can have options other than the initial default, as we'll see next.
+Note that you won't be able to create a component if there is already another one with the same name in that position. In other words, a component that already exists will not be overwritten by a new component.
 
 ## Configuration
-The extension comes with predefined values, but you can change them if necessary.
+The Extension comes with predefined values, but you can change them if necessary.
 These are the configurable values.
 
-|  Configurable           | Default                        | Other Options         
-| ----------------------- | ------------------------------ | ------------------------- |
-| `Language`              | Typescript                     | JavaScript                |
-| `Stylling`              | Styled Components              | Tailwind, SCSS, Sass, CSS |
-| `Unit Tests File`       | Yes, inside *`__test__`* folder  | Yes but without folder, No    |                  
-| `Storybook File`        | No                             | Yes                       |                  
-| `Component Declaration` | Function                       | Arrow Function            |                  
-| `Semicolon`*            | Yes                            | No                        |                  
+|  Item                     | Default                            | Other Options         
+| ------------------------- | ---------------------------------  | ----------------------------- |
+| `Language`                | Typescript                         | JavaScript                    |
+| `Stylization`             | Styled Components                  | Tailwind, SCSS, Sass, CSS     |
+| `Unit Tests File`         | Yes, inside *`__test__`* folder    | Yes but without folder, No    |                  
+| `Storybook File`          | No                                 | Yes                           |                  
+| `Component Declaration`   | Function                           | Arrow Function                |                  
+| `Semicolon`*              | Yes                                | No                            |                  
 
 *`Semicolon` refer to whether or not a semicolon is used at the end of statements.
 
-To change one or more values:
-1. Right click on any folder in the Explorer view.
-2. Select `Customize Default Settings...`.
-3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
-4. You will be asked to choose the new default values.
+You can customize the patterns used in the component's structure by modifying the Extension's default settings.
+
+1. Right-click on any folder in the Explorer view.
+2. Click on `Customize Default Settings...`.
+3. This will open the VS Code `Command Palette` at the top of the VS Code editor.
+4. Choose `TypeScript` or `JavaScript` as the component language.
+5. Next, choose the type of style you will use in the component.
+6. Note that there is an `Ask on component creation` option. By selecting it, you will not set any styling strategy as the default. Instead, you will only select the style type when creating a new component.
+7. After choosing one of the styling options, you will be asked about Unit Tests. Choose an option.
+8. And so on.
+9. At the end of the process, the new default values are set and will be used when creating new components.
 
 ## Installation
 1. Open Visual Studio Code.
 2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
 3. Search for `React New Component Wizard`.
-4. Click `Install` to install the extension.
-5. Reload Visual Studio Code to activate the extension.
-
-## Configuration
-You can customize the default file extensions and styles used in the component structure by modifying the default extension settings.
-1. Right click on any folder in the Explorer view.
-2. Click on `Customize Default Settings...`.
-3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
-4. Choose `TypeScript` or `JavaScript` as the component language.
-5. Then choose what kind of styling you will use in the component.
-6. Note that there is an `Ask on component creation` option. By selecting it, you will not set any styling strategy as default. Instead, you will select the style type only when you are creating a component.
-7. After choosing one of the style options, you will ask about unit tests. Choose one option.
-8. And so one.
-9. At the end of the process, the new default values are set and will be used when creating the next components.
+4. Click `Install` to install the Extension.
+5. Reload Visual Studio Code to activate the Extension.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
