@@ -1,4 +1,4 @@
-# VSCode Extension: React Component Creator Wizard
+# VSCode Extension: React New Component Wizard
 
 <center>
   <img src="https://raw.githubusercontent.com/imbroisi/vscode-extension-react-component-creator-wizard/main/images/logo.png">
@@ -52,7 +52,7 @@ export default function MyComponent(props: MyComponentProps) {
 
 ## How to Use
 1. Right click on a folder in the Explorer view (`SomeFolder` in the exemple above).
-2. Select `✍️ Component Creator Wizard` to generate a new component structure.
+2. Select `✍️ New React Component` to generate a new component structure.
 3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
 4. There, give your component a name and press `Enter`.
 5. Your component is created! 🥳 🎉
@@ -83,7 +83,7 @@ To change one or more values:
 ## Installation
 1. Open Visual Studio Code.
 2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
-3. Search for `React Component Creator Wizard`.
+3. Search for `React New Component Wizard`.
 4. Click `Install` to install the extension.
 5. Reload Visual Studio Code to activate the extension.
 

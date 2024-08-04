@@ -1,7 +1,7 @@
 {
   "name": "vscode-extension-react-component-structure",
-  "displayName": "React New Component Wizard",
-  "description": "Create folder and files structure for React component",
+  "displayName": "React Create Component Wizard",
+  "description": "Create folder and files structure for a new React component",
   "version": "1.0.4",
   "engines": {
     "node": ">=18.0.0 <21.0.0",
