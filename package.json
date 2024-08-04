@@ -17,6 +17,12 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "react",
+    "component",
+    "creator",
+    "wizard"
+  ],
   "main": "./out/extension.js",
   "activationEvents": [
     "onCommand:extension.createReactComponentWizard",
@@ -31,7 +37,7 @@
     "commands": [
       {
         "command": "extension.createReactComponentWizard",
-        "title": "New Component Wizard"
+        "title": "✍️ New React Component"
       },
       {
         "command": "extension.createReactComponentWizardCustomize",

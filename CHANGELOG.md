@@ -4,6 +4,27 @@ All notable changes to the "create-component" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [1.0.1] - 2024-08-04
 
-- Initial release
+### Added
+- Initial release of the "React Component Creator Wizard" extension.
+- Basic functionality to create a folder and file structure for React components.
+- Unit Tests with Jest for the extension.
+- Support for TypeScript and Tailwind CSS.
+- Context menu commands to generate necessary files and folders for a new React component.
+- Customizable file extensions and styles used in the component structure.
+- Support for Storybook and Unit Tests (React Testing Library).
+
+## [1.0.2] - 2024-08-04
+
+### Added
+- Logo
+
+## [1.0.3] - 2024-08-04
+### Improved
+- Small adjustments in UX
+
+## [1.0.4] - 2024-08-05
+### Improved
+- Better informations in Marketplace page.
+

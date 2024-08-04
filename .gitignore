@@ -5,3 +5,4 @@ tmp
 src/tmp
 .vscode-test/
 *.vsix
+.DS_Store

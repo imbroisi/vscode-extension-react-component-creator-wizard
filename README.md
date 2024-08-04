@@ -1,8 +1,8 @@
 # VSCode Extension: React Component Creator Wizard
 
-<div style="width:20%; margin-left: 20px;">
-  <img src="images/logo.png">
-</div>
+<center>
+  <img src="https://raw.githubusercontent.com/imbroisi/vscode-extension-react-component-creator-wizard/main/images/logo.png">
+</center>
 
 ## Description
 This Visual Studio Code extension helps you create a folder and file structure for React components quickly and efficiently. It provides context menu commands to generate the necessary files and folders for a new React component, ensuring consistency and saving development time.
@@ -52,12 +52,33 @@ export default function MyComponent(props: MyComponentProps) {
 
 ## How to Use
 1. Right click on a folder in the Explorer view (`SomeFolder` in the exemple above).
-2. Select `Component Creator Wizard` to generate a new component structure.
+2. Select `✍️ Component Creator Wizard` to generate a new component structure.
 3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
 4. There, give your component a name and press `Enter`.
 5. Your component is created! 🥳 🎉
 
-Your component has been created with the default options. But you can have options other than the initial default, as we'll see in a moment.
+Your component has been created with the default options. But you can have options other than the initial default, as we'll see next.
+
+## Configuration
+The extension comes with predefined values, but you can change them if necessary.
+These are the configurable values.
+
+|  Configurable           | Default                        | Other Options         
+| ----------------------- | ------------------------------ | ------------------------- |
+| `Language`              | Typescript                     | JavaScript                |
+| `Stylling`              | Styled Components              | Tailwind, SCSS, Sass, CSS |
+| `Unit Tests File`       | Yes, inside *`__test__`* folder  | Yes but without folder, No    |                  
+| `Storybook File`        | No                             | Yes                       |                  
+| `Component Declaration` | Function                       | Arrow Function            |                  
+| `Semicolon`*            | Yes                            | No                        |                  
+
+*`Semicolon` refer to whether or not a semicolon is used at the end of statements.
+
+To change one or more values:
+1. Right click on any folder in the Explorer view.
+2. Select `Customize Default Settings...`.
+3. This will open the VS Code's `Command Palette`, at the top of VS Code editor.
+4. You will be asked to choose the new default values.
 
 ## Installation
 1. Open Visual Studio Code.

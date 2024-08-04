@@ -44,8 +44,8 @@ export const appData = [
         id: 'function',
         question: 'Choose the component declaration',
         options: [
-            'Arrow function',
             'Function',
+            'Arrow function',
         ],
     },
     {
