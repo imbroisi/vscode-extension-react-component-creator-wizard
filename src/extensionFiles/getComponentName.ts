@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { validateComponentName } from '../utils/validateComponentName';
 
-export const getComponentName = async (uri: vscode.Uri) => {
+export default async function getComponentName(uri: vscode.Uri) {
   const name = await vscode.window.showInputBox({
     placeHolder: 'Enter the Component name',
   });
@@ -13,7 +13,7 @@ export const getComponentName = async (uri: vscode.Uri) => {
   const FolderPath = `${uri.fsPath}/${name}`;
   const isPathExist = await vscode.workspace.fs.stat(vscode.Uri.file(FolderPath)).then(() => true, () => false);
   if (isPathExist) {
-    return { error: 'Directory already exist' };
+    return { error: 'Directory already exists' };
   }
   if (!validateComponentName(name)) {
     return { error: 'Invalid Component name' };

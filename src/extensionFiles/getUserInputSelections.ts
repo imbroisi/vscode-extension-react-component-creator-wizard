@@ -5,28 +5,30 @@ export interface OptionsSelected {
   [key: string]: string
 }
 
-export const getUserInputSelections = async (operation: string, optionsSelected: OptionsSelected) => {
+export default async function getUserInputSelections(type: string, previousSelections: OptionsSelected) {
+  const optionsSelected: any = { ...previousSelections };
+
   for (let data of appData) {
     const { id, question, options, include_option_ask_on_component_creation } = data;
-    const previousSelection: any = optionsSelected?.[id];
+    const selectionPrev: any = optionsSelected?.[id];
 
     const displayOption = [...options];
-    if (operation === 'setup') {
+    if (type === 'setup') {
       if (include_option_ask_on_component_creation) {
         displayOption.push(ASK_ON_COMPONENT_CREATION);
       }
     }
 
-    if (typeof previousSelection === 'string') {
-      const index = displayOption.indexOf(previousSelection);
+    if (typeof selectionPrev === 'string') {
+      const index = displayOption.indexOf(selectionPrev);
       if (index > -1) {
         displayOption.splice(index, 1);
-        if (operation === 'setup' || include_option_ask_on_component_creation) {
-          displayOption.unshift(previousSelection);
+        if (type === 'setup' || include_option_ask_on_component_creation) {
+          displayOption.unshift(selectionPrev);
         }
       }
-      if (operation === 'create') {
-        if (previousSelection !== ASK_ON_COMPONENT_CREATION) {
+      if (type === 'create') {
+        if (selectionPrev !== ASK_ON_COMPONENT_CREATION) {
           continue;
         }
       }
@@ -43,4 +45,6 @@ export const getUserInputSelections = async (operation: string, optionsSelected:
 
     optionsSelected[id] = selectedOption;
   }
+
+  return optionsSelected;
 };

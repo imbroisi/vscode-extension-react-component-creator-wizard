@@ -10,7 +10,6 @@ export const createTestsFile = async (uri: vscode.Uri, name: string, optionsSele
   }
 
   const testDirectoryPath = optionsSelected.testing.indexOf('inside') === -1 ? '' : '__tests__/';
-  
   const fileContent = replaceTags({
     optionsSelected,
     name, 
@@ -19,6 +18,5 @@ export const createTestsFile = async (uri: vscode.Uri, name: string, optionsSele
 
   const fileExtension = optionsSelected.language === 'TypeScript' ? 'tsx' : 'jsx';
   const filePath = `${uri.fsPath}/${name}/${testDirectoryPath}${name}.test.${fileExtension}`;
-
   await writeContentToFile(filePath, fileContent);
 };

@@ -23,7 +23,6 @@ const replaceTS = (componentOriginal: string, isTypescript: boolean) => {
   }
 
   // JavaScript
-
   while (component.indexOf('{{TS}}') !== -1) {
     const start = component.indexOf('{{TS}}');
     const end = component.indexOf('{{/TS}}');

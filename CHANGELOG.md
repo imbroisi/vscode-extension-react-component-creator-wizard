@@ -35,3 +35,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.6] - 2024-08-05
 ### Improved
 - Update README
+
+## [1.0.7] - 2024-08-05
+### Improved
+- Code opmitization

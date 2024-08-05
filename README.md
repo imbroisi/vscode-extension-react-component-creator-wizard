@@ -1,5 +1,4 @@
 # VSCode Extension: React Create Component Wizard
-
 <center>
   <img src="https://raw.githubusercontent.com/imbroisi/vscode-extension-react-component-creator-wizard/main/images/logo.png">
 </center>
