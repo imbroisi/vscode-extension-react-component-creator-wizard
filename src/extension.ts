@@ -2,31 +2,32 @@ import * as vscode from 'vscode';
 import createAllFiles from './components/main';
 import { appData, ASK_ON_COMPONENT_CREATION } from './data/appData';
 import { validateComponentName } from './utils/validateComponentName';
+import { getComponentName } from './extensionHelpers/getComponentName';
 
 export interface OptionsSelected {
   [key: string]: string
 }
 
-const getComponentName = async (uri: vscode.Uri) => {
-  const name = await vscode.window.showInputBox({
-    placeHolder: 'Enter the Component name',
-  });
+// const getComponentName = async (uri: vscode.Uri) => {
+//   const name = await vscode.window.showInputBox({
+//     placeHolder: 'Enter the Component name',
+//   });
 
-  if (!name) {
-    return { error: 'No file name entered' };
-  }
+//   if (!name) {
+//     return { error: 'No file name entered' };
+//   }
 
-  const FolderPath = `${uri.fsPath}/${name}`;
-  const isPathExist = await vscode.workspace.fs.stat(vscode.Uri.file(FolderPath)).then(() => true, () => false);
-  if (isPathExist) {
-    return { error: 'Directory already exist'};
-  }
-  if (!validateComponentName(name)) {
-    return { error: 'Invalid Component name'};
-  }
+//   const FolderPath = `${uri.fsPath}/${name}`;
+//   const isPathExist = await vscode.workspace.fs.stat(vscode.Uri.file(FolderPath)).then(() => true, () => false);
+//   if (isPathExist) {
+//     return { error: 'Directory already exist'};
+//   }
+//   if (!validateComponentName(name)) {
+//     return { error: 'Invalid Component name'};
+//   }
 
-  return { name };
-};
+//   return { name };
+// };
 
 async function commun(
   context: vscode.ExtensionContext,
