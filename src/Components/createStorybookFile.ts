@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 import { replaceTags } from '../utils/replaceTags';
 import { writeContentToFile } from '../utils/writeContentToFile';
-import { OptionsSelected } from '../extension';
 import modelStorybook from '../models/model.storybook';
+import { OptionsSelected } from '../extension';
 
 export const createStorybookFile = async (uri: vscode.Uri, name: string, optionsSelected: OptionsSelected) => {
   if (optionsSelected.storybook === 'No') {

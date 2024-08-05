@@ -2,7 +2,7 @@
   "name": "vscode-extension-react-component-structure",
   "displayName": "React Create Component Wizard",
   "description": "Create folder and files structure for a new React component",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "engines": {
     "node": ">=18.0.0 <21.0.0",
     "vscode": "^1.91.0"
@@ -21,7 +21,8 @@
     "react",
     "component",
     "creator",
-    "wizard"
+    "wizard",
+    "typescript"
   ],
   "main": "./out/extension.js",
   "activationEvents": [
@@ -37,7 +38,7 @@
     "commands": [
       {
         "command": "extension.createReactComponentWizard",
-        "title": "⚛️ New React Component"
+        "title": "New React Component Wizard"
       },
       {
         "command": "extension.createReactComponentWizardCustomize",
@@ -67,8 +68,7 @@
     "lint": "eslint src --ext ts",
     "test:vscode": "vscode-test __tests-vscode__/**/*.test.ts",
     "test:jest": "jest",
-    "prepare": "husky",
-    "test-tmp": "ts-node -r tsconfig-paths/register node_modules/mocha/bin/_mocha --require ts-node/register 'src/**/*.test.ts'"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 import { replaceTags } from '../utils/replaceTags';
 import { writeContentToFile } from '../utils/writeContentToFile';
-import { OptionsSelected } from '../extension';
 import modelTest from '../models/model.testModel';
+import { OptionsSelected } from '../extension';
 
 export const createTestsFile = async (uri: vscode.Uri, name: string, optionsSelected: OptionsSelected) => {
   if (optionsSelected.testing === 'No'){

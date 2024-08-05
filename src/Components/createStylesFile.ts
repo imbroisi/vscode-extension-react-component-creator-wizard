@@ -1,11 +1,11 @@
 import * as vscode from 'vscode';
 import { replaceTags } from '../utils/replaceTags';
 import { writeContentToFile } from '../utils/writeContentToFile';
-import { OptionsSelected } from '../extension';
 import modelStyleCss from '../models/model.style_css';
 import modelStyleStyledComponent from '../models/model.style_styledComponents';
 import modelStyleSassScss from '../models/model.style_sass_scss';
 import modelStyleSassIdented from '../models/model.style_sass_idented';
+import { OptionsSelected } from '../extension';
 
 export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSelected: OptionsSelected) => {
   let filePath;

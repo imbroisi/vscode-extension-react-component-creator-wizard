@@ -1,4 +1,3 @@
-
 import * as vscode from 'vscode';
 import { replaceTags } from '../utils/replaceTags';
 import { writeContentToFile } from '../utils/writeContentToFile';
