@@ -118,8 +118,9 @@ export function activate(context: vscode.ExtensionContext) {
     commun(context, uri, 'setup');
   });
 
-  context.subscriptions.push(create);
-  context.subscriptions.push(setup);
+  // context.subscriptions.push(create);
+  // context.subscriptions.push(setup);
+  
 }
 
 export function deactivate() { }
