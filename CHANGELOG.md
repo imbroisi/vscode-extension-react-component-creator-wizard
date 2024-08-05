@@ -37,5 +37,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Update README
 
 ## [1.0.7] - 2024-08-05
+### Fix
+- Storybook JavaScript generated code
 ### Improved
 - Code opmitization
