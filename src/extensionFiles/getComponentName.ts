@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { validateComponentName } from '../utils/validateComponentName';
+import { isValidComponentName } from '../utils/isValidComponentName';
 
 export default async function getComponentName(uri: vscode.Uri) {
   const name = await vscode.window.showInputBox({
@@ -15,7 +15,7 @@ export default async function getComponentName(uri: vscode.Uri) {
   if (isPathExist) {
     return { error: 'Directory already exists' };
   }
-  if (!validateComponentName(name)) {
+  if (!isValidComponentName(name)) {
     return { error: 'Invalid Component name' };
   }
 

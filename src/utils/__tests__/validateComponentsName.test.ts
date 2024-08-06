@@ -1,16 +1,16 @@
-import { validateComponentName } from '../validateComponentName';
+import { isValidComponentName } from '../validateComponentName';
 
-describe('validateComponentName', () => {
-  it('should return true for valid component names', () => {
-    expect(validateComponentName('Component')).toBe(true);
-    expect(validateComponentName('MyComponent')).toBe(true);
-    expect(validateComponentName('Component123')).toBe(true);
+describe('isValidComponentName', () => {
+  test('should return true for valid component names', () => {
+    expect(isValidComponentName('MyComponent')).toBe(true);
+    expect(isValidComponentName('Component123')).toBe(true);
+    expect(isValidComponentName('Another_$Component')).toBe(true);
   });
 
-  it('should return false for invalid component names', () => {
-    expect(validateComponentName('component')).toBe(false);
-    expect(validateComponentName('123Component')).toBe(false);
-    expect(validateComponentName('Component-123')).toBe(false);
-    expect(validateComponentName('Component Name')).toBe(false);
+  test('should return false for invalid component names', () => {
+    expect(isValidComponentName('component')).toBe(false);
+    expect(isValidComponentName('123Component')).toBe(false);
+    expect(isValidComponentName('_Component')).toBe(false);
+    expect(isValidComponentName('$Component')).toBe(false);
   });
 });
