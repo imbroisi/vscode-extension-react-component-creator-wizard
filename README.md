@@ -22,7 +22,7 @@ someFolder [e.g. components]
       │
       │── MyComponent.{jsx | tsx}
       │
-      │── MyComponent.styles.{js | ts | css | scss | sass}
+      │── MyComponent.styles.{js | ts | css | module.scss | sass}
       │
       │── MyComponent.stories.{jsx | tsx} [optional]
       │
@@ -61,16 +61,16 @@ Note that you won't be able to create a component if there is already another on
 The Extension comes with predefined values, but you can change them if necessary.
 These are the configurable values.
 
-|  Item                     | Default                            | Other Options         
-| ------------------------- | ---------------------------------  | ----------------------------- |
-| `Language`                | Typescript                         | JavaScript                    |
-| `Stylization`             | Styled Components                  | Tailwind, SCSS, Sass, CSS     |
-| `Unit Tests File`         | Yes, inside *`__test__`* folder    | Yes but without folder, No    |                  
-| `Storybook File`          | No                                 | Yes                           |                  
-| `Component Declaration`   | Function                           | Arrow Function                |                  
-| `Semicolon`*              | Yes                                | No                            |                  
+|  Item                       | Default                            | Other Options         
+| --------------------------- | ---------------------------------  | ----------------------------- |
+| ` Language `                | Typescript                         | JavaScript                    |
+| ` Stylization `             | Styled Components                  | Tailwind, SCSS, Sass, CSS     |
+| ` Unit Tests File `         | Yes, inside *`__test__`* folder    | Yes but without folder, No    |                  
+| ` Storybook File `          | No                                 | Yes                           |                  
+| ` Component Declaration `   | Function                           | Arrow Function                |                  
+| ` Semicolon `*              | Yes                                | No                            |                  
 
-*`Semicolon` refer to whether or not a semicolon is used at the end of statements.
+*` Semicolon ` refers to whether or not a semicolon is used at the end of statements.
 
 You can customize the patterns used in the component's structure by modifying the Extension's default settings.
 

@@ -32,7 +32,7 @@ export const createStylesFile = async (uri: vscode.Uri, name: string, optionsSel
       });
       break;
     case 'SCSS':
-      filePath = `${uri.fsPath}/${name}/${name}.scss`;
+      filePath = `${uri.fsPath}/${name}/${name}.module.scss`;
       fileContent = replaceTags({
         optionsSelected,
         component: modelStyleSassScss,

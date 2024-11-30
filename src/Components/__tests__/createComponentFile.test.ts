@@ -98,7 +98,7 @@ describe('createComponentFile', () => {
       function: 'Arrow function',
     };
     const expectedFileContent =
-      'import \'./MyComponent.scss\';\n' +
+      'import \'./MyComponent.module.scss\';\n' +
       '\n' +
       'const MyComponent = () => {\n' +
       '  return (\n' +

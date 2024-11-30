@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import { isValidComponentName } from '../utils/isValidComponentName';
+import { isValidComponentName } from '../utils/validateComponentName';
 
-export default async function getComponentName(uri: vscode.Uri) {
+export default async function inputComponentName(uri: vscode.Uri) {
   const name = await vscode.window.showInputBox({
     placeHolder: 'Enter the Component name',
   });
